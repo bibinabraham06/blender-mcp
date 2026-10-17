@@ -5,8 +5,8 @@
 
 ## Next
 - Compare official / bridge / fork on a real task; keep or remove each. Remove unused addons from Blender.
-- Set `DISABLE_TELEMETRY=true` (and untick Allow Telemetry in the addon) for every client that launches the PyPI server, incl. `~/.gemini/config/mcp_config.json`; consider pinning it or pointing it at a reviewed clone instead of `uvx blender-mcp`.
-- Enable `BLENDER_MCP_SAFE_MODE=1` where code execution is used; port the upstream #365 safe-mode fix (`script_directories`, `bpy.ops.extensions.*`) into `safe_mode.py`.
+- Pin or replace `uvx blender-mcp` in `~/.gemini/config/mcp_config.json` with a reviewed clone; untick Allow Telemetry in the Blender addon prefs.
+- Rotate the plaintext GitHub token and Tailscale bearer token stored in `~/.gemini/config/mcp_config.json` (exposed in a session transcript 2026-10-17) and move them out of the file.
 - Verify integration tests with local Blender instance.
 
 ## Later
@@ -15,6 +15,7 @@
 ## Blocked
 
 ## Completed
+- Ported #365 safe-mode fix (`script_directories`, `bpy.ops.extensions.*`) with regression tests; set `BLENDER_MCP_SAFE_MODE=1` and `DISABLE_TELEMETRY=true` for the Gemini/Antigravity blender entry (2026-10-17). Codex has no blender MCP configured.
 - Audited fork history against the 2026-08-10 upstream compromise window (2026-10-17): no malicious changes found; see DECISIONS.md.
 - Initial repo clone and setup.
 - Initialized workspace standardization governance files.

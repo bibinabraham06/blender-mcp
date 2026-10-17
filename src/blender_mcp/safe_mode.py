@@ -297,6 +297,7 @@ _FORBIDDEN_OPS_PREFIXES: Final[tuple[str, ...]] = (
     "bpy.ops.script",       # bpy.ops.script.* executes python
     "bpy.ops.text",         # bpy.ops.text.* runs text datablocks
     "bpy.ops.preferences",  # preferences ops install and enable addons
+    "bpy.ops.extensions",   # 4.2+ extension install, can enable on install
     "bpy.ops.console",      # the console executes arbitrary python
 )
 
@@ -345,6 +346,7 @@ _FORBIDDEN_BARE_ATTRS: Final[dict[str, str]] = {
     "run_script": "executes a text datablock as python",
     "addon_install": "installs an addon from disk",
     "addon_enable": "enables an addon, executing its module-level code",
+    "script_directories": "redirects Blender's script search path (3.6+ collection)",
 }
 
 #: Assigning to any of these on any object creates a stored python expression

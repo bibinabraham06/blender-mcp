@@ -171,6 +171,24 @@ BLOCKED_SCRIPTS = {
     "ops_script": "import bpy\nbpy.ops.script.python_file_run(filepath='/tmp/x.py')",
     "ops_text": "import bpy\nbpy.ops.text.run_script()",
     "addon_install": "import bpy\nbpy.ops.preferences.addon_install(filepath='/tmp/x.zip')",
+    "ops_extensions": (
+        "import bpy\n"
+        "bpy.ops.extensions.package_install_files(filepath='/tmp/x.zip', enable_on_install=True)"
+    ),
+    "script_directories_new": (
+        "import bpy\n"
+        "bpy.context.preferences.filepaths.script_directories.new()"
+    ),
+    "script_directories_alias": (
+        "import bpy\n"
+        "dirs = bpy.context.preferences.filepaths.script_directories\n"
+        "dirs[0].directory = '/tmp/evil'"
+    ),
+    "script_directories_iter": (
+        "import bpy\n"
+        "for d in bpy.context.preferences.filepaths.script_directories:\n"
+        "    print(d)"
+    ),
     "texts": "import bpy\nt = bpy.data.texts.new('x')",
     "external_blend": "import bpy\nbpy.ops.wm.append(filepath='/tmp/evil.blend')",
     "libraries": "import bpy\nprint(bpy.data.libraries)",
