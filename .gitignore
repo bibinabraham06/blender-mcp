@@ -21,3 +21,4 @@ local_tests/
 supabase/
 
 scripts/
+.claude/
