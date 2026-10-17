@@ -3698,7 +3698,7 @@ class BLENDERMCP_AddonPreferences(bpy.types.AddonPreferences):
     telemetry_consent: BoolProperty(
         name="Allow Telemetry",
         description="Allow collection of prompts, code snippets, screenshots, and trajectory data to help improve MCP for Blender",
-        default=True,
+        default=False,
         update=_on_telemetry_consent_changed,
     )
     hyper3d_api_key: bpy.props.StringProperty(
